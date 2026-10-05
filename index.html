@@ -1,0 +1,2750 @@
+```html
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zaki & Tayma | Invitation de Mariage</title>
+
+<!-- =====================================================
+     SOCIAL LINK PREVIEW
+===================================================== -->
+
+<meta property="og:title" content="Zaki & Tayma | Invitation de Mariage">
+<meta property="og:description" content="Une invitation à célébrer leur plus belle aventure">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://da3wati.github.io/Z-T/">
+<meta property="og:image" content="https://da3wati.github.io/Z-T/preview.jpg">
+<meta property="og:image:secure_url" content="https://da3wati.github.io/Z-T/preview.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1648">
+<meta property="og:image:height" content="928">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zaki & Tayma | Invitation de Mariage">
+<meta name="twitter:description" content="Une invitation à célébrer leur plus belle aventure">
+<meta name="twitter:image" content="https://da3wati.github.io/Z-T/preview.jpg">
+
+<!-- =====================================================
+     FONTS
+===================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- QR CODE -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    overflow-x:hidden;
+    background:#e9e1dc;
+}
+
+
+/* =====================================================
+   FIXED BACKGROUND
+===================================================== */
+
+.page-background{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:-5;
+
+    background-image:url("background.jpg");
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    background-position:center center;
+    background-attachment:fixed;
+}
+
+.page-background::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,.055);
+}
+
+
+/* =====================================================
+   INTRO VIDEO
+===================================================== */
+
+#intro{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100dvh;
+
+    background:#000;
+
+    z-index:99999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    opacity:1;
+    visibility:visible;
+
+    transition:
+        opacity 1.3s ease,
+        visibility 1.3s ease;
+}
+
+#intro.hidden{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+#introVideo{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.intro-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.08);
+    pointer-events:none;
+}
+
+.skip-button{
+    position:absolute;
+    bottom:35px;
+    left:50%;
+    transform:translateX(-50%);
+
+    padding:14px 30px;
+
+    border:1px solid rgba(255,255,255,.65);
+    border-radius:40px;
+
+    background:rgba(70,10,28,.35);
+
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    color:white;
+
+    font-family:"Montserrat",sans-serif;
+    font-size:9px;
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+
+.skip-button:hover{
+    background:rgba(100,21,42,.75);
+}
+
+
+/* =====================================================
+   INVITATION
+===================================================== */
+
+#invitation{
+    position:relative;
+    min-height:100vh;
+    display:none;
+    overflow:hidden;
+}
+
+.invitation-content{
+    position:relative;
+    z-index:2;
+}
+
+
+/* =====================================================
+   GLASS CARDS
+===================================================== */
+
+.hero-card,
+.detail-card,
+.location-card,
+.countdown,
+.privacy-card,
+.quran-dua,
+.rsvp-section{
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.50),
+            rgba(255,255,255,.24)
+        );
+
+    border:1px solid rgba(255,255,255,.65);
+
+    backdrop-filter:blur(9px);
+    -webkit-backdrop-filter:blur(9px);
+
+    box-shadow:
+        0 25px 70px rgba(50,10,20,.10),
+        inset 0 1px 0 rgba(255,255,255,.65);
+}
+
+
+/* =====================================================
+   MUSIC BUTTON
+===================================================== */
+
+.music-control{
+
+    position:fixed;
+
+    top:20px;
+    left:20px;
+
+    width:56px;
+    height:56px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(201,167,101,.85);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.88),
+            rgba(255,255,255,.30)
+        );
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    z-index:500;
+
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:
+        0 8px 28px rgba(55,10,25,.18),
+        inset 0 1px 1px rgba(255,255,255,.85);
+
+    transition:.35s ease;
+}
+
+.music-control::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:42px;
+    height:42px;
+
+    border:1px solid rgba(201,167,101,.42);
+
+    border-radius:50%;
+}
+
+.music-control::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    background:#c9a765;
+
+    top:8px;
+    right:13px;
+}
+
+.music-icon{
+
+    position:relative;
+
+    width:22px;
+    height:27px;
+
+    z-index:2;
+}
+
+.music-icon::before{
+
+    content:"";
+
+    position:absolute;
+
+    right:4px;
+    top:1px;
+
+    width:2px;
+    height:19px;
+
+    background:#64152a;
+
+    border-radius:3px;
+}
+
+.music-icon::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-1px;
+    bottom:1px;
+
+    width:10px;
+    height:7px;
+
+    background:#64152a;
+
+    border-radius:50%;
+
+    transform:rotate(-18deg);
+}
+
+.music-note{
+
+    position:absolute;
+
+    top:1px;
+    left:5px;
+
+    width:14px;
+    height:2px;
+
+    background:#64152a;
+
+    border-radius:3px;
+
+    transform:rotate(-8deg);
+}
+
+.music-control.playing{
+    animation:musicPulse 2.5s ease-in-out infinite;
+}
+
+.music-control.playing .music-icon{
+    animation:musicRotate 3s linear infinite;
+}
+
+@keyframes musicPulse{
+
+    0%,100%{
+        box-shadow:
+            0 8px 28px rgba(55,10,25,.18),
+            0 0 0 rgba(201,167,101,0);
+    }
+
+    50%{
+        box-shadow:
+            0 8px 30px rgba(55,10,25,.22),
+            0 0 18px rgba(201,167,101,.30);
+    }
+}
+
+@keyframes musicRotate{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+
+/* =====================================================
+   MAIN INTRODUCTION TEXT
+===================================================== */
+
+.quran-dua{
+
+    width:min(800px,94%);
+
+    margin:34px auto 0;
+
+    padding:42px 30px;
+
+    text-align:center;
+
+    border-radius:26px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.quran-dua::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:11px;
+
+    border:1px solid rgba(201,167,101,.48);
+
+    border-radius:18px;
+
+    pointer-events:none;
+}
+
+.quran-dua-label{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    color:#8d6a37;
+
+    margin-bottom:18px;
+
+    position:relative;
+}
+
+.quran-verse{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:29px;
+
+    line-height:1.6;
+
+    color:#64152a;
+
+    font-weight:500;
+
+    position:relative;
+}
+
+.quran-reference{
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    color:#202020;
+
+    margin-top:15px;
+
+    position:relative;
+}
+
+.dua-divider{
+
+    width:75px;
+
+    height:1px;
+
+    margin:25px auto 20px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #c9a765,
+            transparent
+        );
+}
+
+.wedding-dua{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:24px;
+
+    font-style:italic;
+
+    color:#111111;
+
+    position:relative;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    min-height:100dvh;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:40px 15px;
+}
+
+.hero-card{
+
+    width:min(760px,94%);
+
+    padding:65px 35px 60px;
+
+    text-align:center;
+
+    border-radius:28px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.hero-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:13px;
+
+    border:1px solid rgba(201,167,101,.65);
+
+    border-radius:20px;
+
+    pointer-events:none;
+}
+
+.hero-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:25px;
+
+    border-top:1px solid rgba(201,167,101,.22);
+
+    border-bottom:1px solid rgba(201,167,101,.22);
+
+    pointer-events:none;
+}
+
+
+/* =====================================================
+   MONOGRAM
+===================================================== */
+
+.monogram-wrapper{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    height:190px;
+
+    margin-bottom:25px;
+}
+
+.monogram-decoration{
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border:1px solid rgba(201,167,101,.48);
+
+    transform:rotate(45deg);
+
+    border-radius:50%;
+}
+
+.monogram{
+
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:clamp(9px,2vw,18px);
+
+    direction:ltr;
+
+    white-space:nowrap;
+}
+
+.monogram-letter{
+
+    display:inline-block;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(105px,20vw,165px);
+
+    font-weight:700;
+
+    line-height:.8;
+
+    letter-spacing:1px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8d6a37,
+            #e8cc8c,
+            #b38b4c,
+            #f0dca5,
+            #96723d
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    text-shadow:
+        0 3px 18px rgba(90,55,15,.22),
+        0 1px 2px rgba(255,255,255,.55);
+}
+
+.monogram-heart{
+
+    display:inline-block;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(27px,5vw,43px);
+
+    font-weight:700;
+
+    color:#64152a;
+
+    transform:translateY(-2px) scale(1.08);
+
+    text-shadow:
+        0 3px 10px rgba(100,21,42,.20);
+}
+
+
+/* =====================================================
+   ORNAMENT
+===================================================== */
+
+.ornament{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:13px;
+
+    margin-bottom:23px;
+}
+
+.ornament span{
+
+    width:65px;
+    height:1px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #c9a765
+        );
+}
+
+.ornament span:last-child{
+
+    background:
+        linear-gradient(
+            to left,
+            transparent,
+            #c9a765
+        );
+}
+
+.ornament i{
+
+    width:7px;
+    height:7px;
+
+    border:1px solid #c9a765;
+
+    transform:rotate(45deg);
+}
+
+
+/* =====================================================
+   INVITATION TITLES
+===================================================== */
+
+.invitation-label{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:35px;
+
+    font-weight:600;
+
+    color:#64152a;
+
+    margin-bottom:7px;
+}
+
+.invitation-label-fr{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:25px;
+
+    font-style:italic;
+
+    color:#181818;
+
+    margin-bottom:32px;
+}
+
+
+/* =====================================================
+   NAMES
+===================================================== */
+
+.couple-name{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:55px;
+
+    font-weight:600;
+
+    color:#64152a;
+
+    letter-spacing:2px;
+
+    margin:12px 0 24px;
+}
+
+
+/* =====================================================
+   MAIN INVITATION MESSAGE
+===================================================== */
+
+.invitation-message{
+
+    max-width:650px;
+
+    margin:0 auto;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:25px;
+
+    line-height:1.65;
+
+    color:#111111;
+
+    font-weight:500;
+}
+
+.invitation-message strong{
+
+    color:#64152a;
+
+    font-weight:700;
+}
+
+.message-highlight{
+
+    margin-top:18px;
+
+    color:#64152a;
+
+    font-weight:600;
+}
+
+
+/* =====================================================
+   DATE CARD
+===================================================== */
+
+.date-card{
+
+    width:min(470px,92%);
+
+    margin:38px auto 0;
+
+    padding:27px 20px 25px;
+
+    direction:ltr;
+
+    position:relative;
+
+    background:rgba(255,255,255,.25);
+
+    border:1px solid rgba(201,167,101,.75);
+
+    box-shadow:
+        inset 0 0 0 5px rgba(255,255,255,.06);
+}
+
+.date-card::before,
+.date-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:18px;
+    height:18px;
+
+    border-color:#c9a765;
+}
+
+.date-card::before{
+
+    top:-1px;
+    left:-1px;
+
+    border-top:2px solid #c9a765;
+    border-left:2px solid #c9a765;
+}
+
+.date-card::after{
+
+    bottom:-1px;
+    right:-1px;
+
+    border-bottom:2px solid #c9a765;
+    border-right:2px solid #c9a765;
+}
+
+.date-day{
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    letter-spacing:5px;
+
+    color:#64152a;
+
+    margin-bottom:9px;
+}
+
+.date-number{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:78px;
+
+    line-height:.8;
+
+    color:#64152a;
+}
+
+.date-month{
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    letter-spacing:3px;
+
+    color:#161616;
+
+    margin-top:12px;
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.section{
+
+    width:min(900px,92%);
+
+    margin:auto;
+
+    padding:90px 0;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.section-title{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:36px;
+
+    font-weight:600;
+
+    color:#64152a;
+}
+
+.section-subtitle{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:25px;
+
+    font-style:italic;
+
+    color:#202020;
+
+    margin-top:4px;
+}
+
+
+/* =====================================================
+   COUNTDOWN
+===================================================== */
+
+.countdown{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    max-width:680px;
+
+    margin:42px auto 0;
+
+    direction:ltr;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.count-box{
+
+    padding:25px 5px;
+
+    border-right:1px solid rgba(100,21,42,.15);
+}
+
+.count-box:last-child{
+    border-right:0;
+}
+
+.count-number{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:52px;
+
+    font-weight:600;
+
+    color:#64152a;
+}
+
+.count-label{
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:9px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    color:#181818;
+
+    margin-top:5px;
+}
+
+.countdown-message{
+
+    margin:28px auto 0;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:27px;
+
+    font-style:italic;
+
+    color:#64152a;
+
+    line-height:1.5;
+}
+
+
+/* =====================================================
+   DETAILS
+===================================================== */
+
+.details{
+
+    border-top:1px solid rgba(255,255,255,.35);
+
+    border-bottom:1px solid rgba(255,255,255,.35);
+}
+
+.detail-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+    margin-top:42px;
+}
+
+.detail-card{
+
+    min-height:210px;
+
+    padding:30px 20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:20px;
+}
+
+.detail-icon{
+
+    width:52px;
+    height:52px;
+
+    border:1px solid #c9a765;
+
+    border-radius:50%;
+
+    margin-bottom:16px;
+
+    position:relative;
+}
+
+.clock-icon::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:19px;
+    height:19px;
+
+    border:1.5px solid #64152a;
+
+    border-radius:50%;
+
+    left:15px;
+    top:15px;
+}
+
+.clock-icon::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:1px;
+    height:8px;
+
+    background:#64152a;
+
+    left:24px;
+    top:17px;
+}
+
+.detail-title{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:25px;
+
+    color:#33292c;
+
+    font-weight:600;
+}
+
+.detail-subtitle{
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:10px;
+
+    letter-spacing:1.5px;
+
+    color:#181818;
+
+    margin-top:5px;
+}
+
+.detail-time{
+
+    direction:ltr;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:42px;
+
+    color:#64152a;
+
+    margin-top:8px;
+}
+
+
+/* =====================================================
+   LOCATION
+===================================================== */
+
+.location-card{
+
+    max-width:750px;
+
+    margin:42px auto 0;
+
+    padding:45px 25px;
+
+    border-radius:22px;
+}
+
+.location-icon{
+
+    width:52px;
+    height:52px;
+
+    border:1px solid #c9a765;
+
+    border-radius:50%;
+
+    margin:0 auto 18px;
+
+    position:relative;
+}
+
+.location-icon::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:16px;
+    height:21px;
+
+    border:1.5px solid #64152a;
+
+    border-radius:50% 50% 50% 0;
+
+    transform:rotate(-45deg);
+
+    top:10px;
+    left:17px;
+}
+
+.location-icon::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    background:#64152a;
+
+    border-radius:50%;
+
+    top:18px;
+    left:23px;
+}
+
+.location-name{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:36px;
+
+    font-weight:600;
+
+    color:#64152a;
+}
+
+.location-fr{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:27px;
+
+    color:#161616;
+
+    margin-top:3px;
+}
+
+.location-city{
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    color:#181818;
+
+    margin-top:8px;
+}
+
+
+/* =====================================================
+   MAP BUTTON
+===================================================== */
+
+.maps-button{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin-top:26px;
+
+    padding:15px 32px;
+
+    background:#64152a;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    border-radius:30px;
+
+    transition:.3s ease;
+}
+
+.maps-button:hover{
+
+    background:#3d0b19;
+
+    transform:translateY(-2px);
+}
+
+
+/* =====================================================
+   QR CODE
+===================================================== */
+
+.qr-section{
+
+    margin-top:40px;
+
+    padding-top:32px;
+
+    border-top:1px solid rgba(100,21,42,.13);
+}
+
+.qr-title{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:25px;
+
+    font-weight:600;
+
+    color:#64152a;
+}
+
+.qr-subtitle{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:21px;
+
+    font-style:italic;
+
+    color:#202020;
+
+    margin-top:3px;
+
+    margin-bottom:22px;
+}
+
+.qr-frame{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:14px;
+
+    background:white;
+
+    border:1px solid rgba(201,167,101,.75);
+
+    border-radius:14px;
+
+    box-shadow:0 12px 30px rgba(50,10,20,.10);
+}
+
+#qrcode{
+
+    width:150px;
+    height:150px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+}
+
+#qrcode img,
+#qrcode canvas{
+
+    display:block;
+
+    width:150px !important;
+    height:150px !important;
+}
+
+.qr-note{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:19px;
+
+    color:#111111;
+
+    margin-top:15px;
+}
+
+
+/* =====================================================
+   PRIVACY
+===================================================== */
+
+.privacy{
+
+    background:rgba(61,11,25,.88);
+
+    color:white;
+
+    width:100%;
+
+    padding-left:4%;
+    padding-right:4%;
+}
+
+.privacy .section-title{
+    color:white;
+}
+
+.privacy .section-subtitle{
+    color:rgba(255,255,255,.70);
+}
+
+.privacy-card{
+
+    width:min(700px,100%);
+
+    margin:42px auto 0;
+
+    padding:40px 25px;
+
+    background:rgba(255,255,255,.045);
+
+    border:1px solid rgba(255,255,255,.20);
+
+    border-radius:20px;
+
+    color:white;
+}
+
+
+/* CAMERA ICON */
+
+.privacy-icon{
+
+    width:60px;
+    height:60px;
+
+    border:1px solid rgba(255,255,255,.65);
+
+    border-radius:50%;
+
+    margin:0 auto 20px;
+
+    position:relative;
+}
+
+.camera-icon{
+    overflow:hidden;
+}
+
+.camera-icon::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:27px;
+    height:18px;
+
+    border:1.5px solid white;
+
+    left:15px;
+    top:21px;
+
+    border-radius:3px;
+}
+
+.camera-icon::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    border:1.5px solid white;
+
+    border-radius:50%;
+
+    left:24px;
+    top:26px;
+}
+
+.camera-icon span{
+
+    position:absolute;
+
+    width:43px;
+    height:1.5px;
+
+    background:white;
+
+    transform:rotate(45deg);
+
+    left:8px;
+    top:29px;
+}
+
+.privacy-title{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:28px;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+}
+
+.privacy-text{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:21px;
+
+    line-height:1.6;
+
+    color:rgba(255,255,255,.85);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+
+    padding:65px 20px 80px;
+
+    text-align:center;
+
+    background:rgba(248,244,239,.78);
+
+    position:relative;
+
+    z-index:2;
+}
+
+.footer-monogram{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:62px;
+
+    font-weight:600;
+
+    letter-spacing:6px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #92703b,
+            #e0c485,
+            #a77d42
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+.footer-text{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:23px;
+
+    font-weight:600;
+
+    color:#111111;
+
+    margin-top:10px;
+}
+
+.footer-text-fr{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:21px;
+
+    font-style:italic;
+
+    color:#181818;
+
+    margin-top:3px;
+}
+
+
+/* =====================================================
+   REVEAL
+===================================================== */
+
+#invitation.show{
+
+    animation:
+        invitationReveal
+        1.5s ease both;
+}
+
+@keyframes invitationReveal{
+
+    from{
+        opacity:0;
+        transform:scale(1.015);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:650px){
+
+    .page-background{
+
+        background-size:100% 100%;
+
+        background-position:center center;
+
+        background-attachment:fixed;
+    }
+
+    .hero{
+        padding:20px 8px;
+    }
+
+    .hero-card{
+
+        width:97%;
+
+        padding:50px 20px 48px;
+
+        border-radius:22px;
+    }
+
+    .hero-card::before{
+
+        inset:9px;
+
+        border-radius:15px;
+    }
+
+    .hero-card::after{
+        inset:18px;
+    }
+
+    .monogram-wrapper{
+        height:165px;
+    }
+
+    .monogram{
+        gap:10px;
+    }
+
+    .monogram-letter{
+        font-size:92px;
+    }
+
+    .monogram-heart{
+        font-size:28px;
+    }
+
+    .couple-name{
+        font-size:43px;
+    }
+
+    .invitation-label{
+        font-size:29px;
+    }
+
+    .invitation-label-fr{
+        font-size:22px;
+    }
+
+    .invitation-message{
+        font-size:21px;
+        line-height:1.65;
+    }
+
+    .date-card{
+        width:96%;
+    }
+
+    .date-number{
+        font-size:67px;
+    }
+
+    .countdown{
+        width:100%;
+    }
+
+    .count-number{
+        font-size:38px;
+    }
+
+    .count-label{
+        font-size:7px;
+        letter-spacing:1px;
+    }
+
+    .countdown-message{
+        font-size:22px;
+    }
+
+    .detail-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section{
+        padding:70px 0;
+    }
+
+    .section-title{
+        font-size:31px;
+    }
+
+    .section-subtitle{
+        font-size:22px;
+    }
+
+    .location-card{
+        padding:35px 17px;
+    }
+
+    .location-name{
+        font-size:31px;
+    }
+
+    .location-fr{
+        font-size:24px;
+    }
+
+    .quran-dua{
+        width:97%;
+        padding:35px 17px;
+    }
+
+    .quran-verse{
+        font-size:24px;
+    }
+
+    .wedding-dua{
+        font-size:21px;
+    }
+
+    #qrcode{
+        width:135px;
+        height:135px;
+    }
+
+    #qrcode img,
+    #qrcode canvas{
+        width:135px !important;
+        height:135px !important;
+    }
+
+    .rsvp-section{
+        width:97%;
+        padding:36px 17px;
+    }
+
+    .rsvp-choice{
+        grid-template-columns:1fr;
+    }
+
+    .privacy-text{
+        font-size:19px;
+    }
+
+}
+
+@media(max-width:400px){
+
+    .monogram-letter{
+        font-size:80px;
+    }
+
+    .monogram-heart{
+        font-size:24px;
+    }
+
+    .couple-name{
+        font-size:38px;
+    }
+
+    .invitation-message{
+        font-size:19px;
+    }
+
+    .date-number{
+        font-size:61px;
+    }
+
+    .count-number{
+        font-size:33px;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+        scroll-behavior:auto !important;
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+    }
+
+}
+
+
+/* =====================================================
+   DARK & LARGE TEXT REFINEMENT
+   تحسين وضوح النصوص وتكبيرها
+===================================================== */
+
+.invitation-message,
+.family-fr,
+.invitation-label-fr,
+.section-subtitle,
+.location-fr,
+.qr-subtitle,
+.footer-text-fr,
+.privacy-fr,
+.detail-fr,
+.date-month,
+.qr-note{
+    color:#111111 !important;
+    font-weight:600 !important;
+}
+
+.invitation-message{font-size:28px !important;line-height:1.7 !important;font-weight:600 !important;}
+.couple-name{font-size:60px !important;font-weight:700 !important;}
+.invitation-label{font-size:38px !important;font-weight:700 !important;}
+.invitation-label-fr{font-size:28px !important;}
+.section-title{font-size:39px !important;font-weight:700 !important;color:#111111 !important;}
+.section-subtitle{font-size:28px !important;}
+.date-day{font-size:14px !important;font-weight:700 !important;color:#111111 !important;}
+.date-month{font-size:14px !important;}
+.count-label{font-size:10px !important;color:#111111 !important;}
+.detail-ar{font-size:26px !important;font-weight:700 !important;color:#111111 !important;}
+.detail-fr{font-size:12px !important;}
+.detail-time{font-size:42px !important;font-weight:600 !important;}
+.location-name{font-size:36px !important;font-weight:700 !important;color:#111111 !important;}
+.location-fr{font-size:29px !important;}
+.location-city{font-size:11px !important;color:#111111 !important;}
+.qr-title{font-size:24px !important;font-weight:700 !important;color:#111111 !important;}
+.qr-subtitle{font-size:23px !important;}
+.qr-note{font-size:19px !important;}
+.footer-text{font-size:23px !important;font-weight:700 !important;color:#111111 !important;}
+.footer-text-fr{font-size:23px !important;}
+.privacy-ar{font-size:25px !important;font-weight:700 !important;}
+.privacy-fr{font-size:23px !important;}
+.quran-reference{font-size:12px !important;color:#111111 !important;}
+.wedding-dua{font-size:27px !important;color:#111111 !important;font-weight:600 !important;}
+
+@media(max-width:650px){
+    .invitation-message{font-size:24px !important;line-height:1.75 !important;}
+    .couple-name{font-size:48px !important;}
+    .invitation-label{font-size:31px !important;}
+    .invitation-label-fr{font-size:24px !important;}
+    .section-title{font-size:31px !important;}
+    .section-subtitle{font-size:24px !important;}
+    .detail-ar{font-size:23px !important;}
+    .detail-fr{font-size:11px !important;}
+    .detail-time{font-size:38px !important;}
+    .location-name{font-size:31px !important;}
+    .location-fr{font-size:25px !important;}
+    .qr-title{font-size:21px !important;}
+    .qr-subtitle{font-size:20px !important;}
+    .qr-note{font-size:17px !important;}
+    .privacy-ar{font-size:22px !important;}
+    .privacy-fr{font-size:20px !important;}
+    .footer-text{font-size:20px !important;}
+    .footer-text-fr{font-size:20px !important;}
+    .wedding-dua{font-size:22px !important;}
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+<div class="page-background"></div>
+
+
+<!-- =====================================================
+     INTRO VIDEO
+===================================================== -->
+
+<div id="intro">
+
+    <video
+        id="introVideo"
+        src="intro.mp4"
+        playsinline
+        muted
+        autoplay
+    ></video>
+
+    <div class="intro-overlay"></div>
+
+    <button
+        class="skip-button"
+        id="skipButton"
+    >
+        OUVRIR L'INVITATION
+    </button>
+
+</div>
+
+
+<!-- =====================================================
+     MUSIC
+===================================================== -->
+
+<audio
+    id="weddingMusic"
+    src="music.mp3"
+    loop
+    preload="auto"
+></audio>
+
+
+<!-- =====================================================
+     INVITATION
+===================================================== -->
+
+<main id="invitation">
+
+<div class="invitation-content">
+
+
+<!-- =====================================================
+     OPENING MESSAGE
+===================================================== -->
+
+<section class="quran-dua">
+
+    <div class="quran-dua-label">
+        Une histoire d'amour, un nouveau chapitre
+    </div>
+
+    <div class="quran-verse">
+        Entourés de l’amour de leurs familles,<br>
+        <strong>Zaki &amp; Tayma</strong><br>
+        ont l’immense bonheur de vous convier à célébrer
+        l’un des plus beaux chapitres de leur histoire.
+    </div>
+
+    <div class="quran-reference">
+        L’union de deux cœurs, la promesse d’un amour éternel
+    </div>
+
+    <div class="dua-divider"></div>
+
+    <div class="wedding-dua">
+        Deux âmes, un amour, une vie à écrire ensemble
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MUSIC
+===================================================== -->
+
+<button
+    class="music-control"
+    id="musicControl"
+    aria-label="Musique"
+>
+
+    <div class="music-icon">
+        <div class="music-note"></div>
+    </div>
+
+</button>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="hero-card">
+
+
+<div class="monogram-wrapper">
+
+    <div class="monogram-decoration"></div>
+
+    <div class="monogram">
+
+        <span class="monogram-letter">
+            Z
+        </span>
+
+        <span class="monogram-heart">
+            ♥
+        </span>
+
+        <span class="monogram-letter">
+            T
+        </span>
+
+    </div>
+
+</div>
+
+
+<div class="ornament">
+
+    <span></span>
+    <i></i>
+    <span></span>
+
+</div>
+
+
+<div class="invitation-label">
+    Invitation de Mariage
+</div>
+
+
+<div class="invitation-label-fr">
+    Une invitation à partager
+    un moment d'exception
+</div>
+
+
+<div class="couple-name">
+    Zaki &amp; Tayma
+</div>
+
+
+<div class="invitation-message">
+
+    Entourés de l’amour de leurs familles,
+
+    <br><br>
+
+    <strong>Zaki &amp; Tayma</strong>
+
+    <br>
+
+    ont l’immense bonheur de vous convier à célébrer
+    l’un des plus beaux chapitres de leur histoire :
+
+    <br>
+
+    l’union de deux cœurs,
+    la promesse d’un amour éternel.
+
+    <br><br>
+
+    En ce jour précieux, ils seraient honorés de votre présence
+    pour partager la magie de cet instant unique
+    et célébrer le début de leur plus belle aventure.
+
+    <div class="message-highlight">
+        Deux âmes, un amour, une vie à écrire ensemble
+    </div>
+
+</div>
+
+
+<div class="date-card">
+
+    <div class="date-day">
+        SAMEDI
+    </div>
+
+    <div class="date-number">
+        31
+    </div>
+
+    <div class="date-month">
+        OCTOBRE 2026
+    </div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     COUNTDOWN
+===================================================== -->
+
+<section class="section countdown-section">
+
+<div class="ornament">
+
+    <span></span>
+    <i></i>
+    <span></span>
+
+</div>
+
+
+<div class="section-title">
+    Le grand jour approche
+</div>
+
+
+<div class="section-subtitle">
+    Every second brings us closer to forever
+</div>
+
+
+<div class="countdown">
+
+
+<div class="count-box">
+
+    <div
+        class="count-number"
+        id="days"
+    >
+        00
+    </div>
+
+    <div class="count-label">
+        DAYS
+    </div>
+
+</div>
+
+
+<div class="count-box">
+
+    <div
+        class="count-number"
+        id="hours"
+    >
+        00
+    </div>
+
+    <div class="count-label">
+        HOURS
+    </div>
+
+</div>
+
+
+<div class="count-box">
+
+    <div
+        class="count-number"
+        id="minutes"
+    >
+        00
+    </div>
+
+    <div class="count-label">
+        MINUTES
+    </div>
+
+</div>
+
+
+<div class="count-box">
+
+    <div
+        class="count-number"
+        id="seconds"
+    >
+        00
+    </div>
+
+    <div class="count-label">
+        SECONDS
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="countdown-message">
+    Our Forever Begins Soon
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     DETAILS
+===================================================== -->
+
+<section class="section details">
+
+<div class="ornament">
+
+    <span></span>
+    <i></i>
+    <span></span>
+
+</div>
+
+
+<div class="section-title">
+    Les détails de votre soirée
+</div>
+
+
+<div class="section-subtitle">
+    Un moment précieux à partager ensemble
+</div>
+
+
+<div class="detail-grid">
+
+
+<div class="detail-card">
+
+    <div class="detail-icon clock-icon"></div>
+
+    <div class="detail-title">
+        Accueil des invités
+    </div>
+
+    <div class="detail-subtitle">
+        ACCUEIL
+    </div>
+
+    <div class="detail-time">
+        16:00
+    </div>
+
+</div>
+
+
+<div class="detail-card">
+
+    <div class="detail-icon clock-icon"></div>
+
+    <div class="detail-title">
+        Fin de la soirée
+    </div>
+
+    <div class="detail-subtitle">
+        FIN DE LA CÉLÉBRATION
+    </div>
+
+    <div class="detail-time">
+        22:00
+    </div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     LOCATION
+===================================================== -->
+
+<section class="section">
+
+<div class="ornament">
+
+    <span></span>
+    <i></i>
+    <span></span>
+
+</div>
+
+
+<div class="section-title">
+    Le lieu de la célébration
+</div>
+
+
+<div class="section-subtitle">
+    Là où commencera notre plus belle aventure
+</div>
+
+
+<div class="location-card">
+
+
+<div class="location-icon"></div>
+
+
+<div class="location-name">
+    Salle des fêtes El Hani
+</div>
+
+
+<div class="location-fr">
+    Salle des fêtes El Hani
+</div>
+
+
+<div class="location-city">
+    EL HANI
+</div>
+
+
+<a
+    class="maps-button"
+    href="https://maps.app.goo.gl/6AqSmFHeAFtYz6HS9"
+    target="_blank"
+    rel="noopener"
+>
+
+    VOIR L'ITINÉRAIRE
+
+</a>
+
+
+<!-- QR CODE -->
+
+<div class="qr-section">
+
+    <div class="qr-title">
+        Retrouvez facilement la salle
+    </div>
+
+    <div class="qr-subtitle">
+        Scannez le QR code pour accéder à l'itinéraire
+    </div>
+
+    <div class="qr-frame">
+
+        <div id="qrcode"></div>
+
+    </div>
+
+    <div class="qr-note">
+        Ouvrez l’appareil photo de votre téléphone
+        et dirigez-le vers le QR code.
+    </div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PRIVACY
+===================================================== -->
+
+<section class="section privacy">
+
+<div class="ornament">
+
+    <span
+        style="background:rgba(255,255,255,.4)"
+    ></span>
+
+    <i
+        style="border-color:rgba(255,255,255,.7)"
+    ></i>
+
+    <span
+        style="background:rgba(255,255,255,.4)"
+    ></span>
+
+</div>
+
+
+<div class="section-title">
+    Avec toute notre délicatesse
+</div>
+
+
+<div class="section-subtitle">
+    Pour préserver la magie de ce moment
+</div>
+
+
+<div class="privacy-card">
+
+
+<div class="privacy-icon camera-icon">
+
+    <span></span>
+
+</div>
+
+
+<div class="privacy-title">
+    Merci de respecter notre intimité
+</div>
+
+
+<div class="privacy-text">
+
+    Nous vous invitons à préserver
+    l’intimité de ce précieux moment
+    en vous abstenant de toute prise de photos.
+
+    <br><br>
+
+    Merci de contribuer à garder
+    cette journée aussi belle et authentique
+    que possible.
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+<div class="footer-monogram">
+    Z &amp; T
+</div>
+
+
+<div class="footer-text">
+    Deux âmes, un amour, une vie à écrire ensemble
+</div>
+
+
+<div class="footer-text-fr">
+    Votre présence rendra ce moment encore plus précieux.
+</div>
+
+</footer>
+
+
+</div>
+
+</main>
+
+
+<script>
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const intro =
+    document.getElementById("intro");
+
+const introVideo =
+    document.getElementById("introVideo");
+
+const skipButton =
+    document.getElementById("skipButton");
+
+const invitation =
+    document.getElementById("invitation");
+
+const music =
+    document.getElementById("weddingMusic");
+
+const musicControl =
+    document.getElementById("musicControl");
+
+
+let invitationOpened = false;
+
+let musicPlaying = false;
+
+
+/* =====================================================
+   OPEN INVITATION
+===================================================== */
+
+function openInvitation(){
+
+    if(invitationOpened){
+        return;
+    }
+
+    invitationOpened = true;
+
+    introVideo.pause();
+
+    intro.classList.add("hidden");
+
+    invitation.style.display = "block";
+
+    invitation.classList.add("show");
+
+    document.body.style.overflowY = "auto";
+
+
+    music.play()
+
+        .then(function(){
+
+            musicPlaying = true;
+
+            musicControl.classList.add("playing");
+
+        })
+
+        .catch(function(){
+
+            musicPlaying = false;
+
+        });
+
+}
+
+
+/* =====================================================
+   VIDEO ENDED
+===================================================== */
+
+introVideo.addEventListener(
+    "ended",
+    function(){
+
+        openInvitation();
+
+    }
+);
+
+
+/* =====================================================
+   OPEN BUTTON
+===================================================== */
+
+skipButton.addEventListener(
+    "click",
+    function(){
+
+        openInvitation();
+
+    }
+);
+
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+musicControl.addEventListener(
+    "click",
+    function(){
+
+        if(musicPlaying){
+
+            music.pause();
+
+            musicPlaying = false;
+
+            musicControl.classList.remove("playing");
+
+        }
+
+        else{
+
+            music.play()
+
+                .then(function(){
+
+                    musicPlaying = true;
+
+                    musicControl.classList.add("playing");
+
+                })
+
+                .catch(function(){});
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   COUNTDOWN
+===================================================== */
+
+const weddingDate =
+    new Date(
+        "2026-10-31T16:00:00+01:00"
+    ).getTime();
+
+
+function updateCountdown(){
+
+    const now =
+        new Date().getTime();
+
+    const distance =
+        weddingDate - now;
+
+
+    if(distance <= 0){
+
+        document.getElementById("days")
+            .textContent = "00";
+
+        document.getElementById("hours")
+            .textContent = "00";
+
+        document.getElementById("minutes")
+            .textContent = "00";
+
+        document.getElementById("seconds")
+            .textContent = "00";
+
+        return;
+
+    }
+
+
+    const days =
+        Math.floor(
+            distance /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60 * 60 * 24)
+            )
+            /
+            (1000 * 60 * 60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60 * 60)
+            )
+            /
+            (1000 * 60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60)
+            )
+            /
+            1000
+        );
+
+
+    document.getElementById("days")
+        .textContent =
+        String(days).padStart(2,"0");
+
+
+    document.getElementById("hours")
+        .textContent =
+        String(hours).padStart(2,"0");
+
+
+    document.getElementById("minutes")
+        .textContent =
+        String(minutes).padStart(2,"0");
+
+
+    document.getElementById("seconds")
+        .textContent =
+        String(seconds).padStart(2,"0");
+
+}
+
+
+updateCountdown();
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+
+/* =====================================================
+   QR CODE
+===================================================== */
+
+new QRCode(
+
+    document.getElementById("qrcode"),
+
+    {
+
+        text:
+        "https://maps.app.goo.gl/6AqSmFHeAFtYz6HS9",
+
+        width:150,
+
+        height:150,
+
+        colorDark:"#64152a",
+
+        colorLight:"#ffffff",
+
+        correctLevel:
+            QRCode.CorrectLevel.H
+
+    }
+
+);
+
+
+/* =====================================================
+   LOCK SCROLL DURING INTRO
+===================================================== */
+
+document.body.style.overflow = "hidden";
+
+
+/* =====================================================
+   AUTOPLAY VIDEO
+===================================================== */
+
+introVideo.play()
+
+    .catch(function(){});
+
+
+</script>
+
+</body>
+
+</html>
+```
